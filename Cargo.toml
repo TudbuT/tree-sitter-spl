@@ -1,10 +1,10 @@
 [package]
-name = "tree-sitter-SPL"
-description = "SPL grammar for the tree-sitter parsing library"
+name = "tree-sitter-spl"
+description = "spl grammar for the tree-sitter parsing library"
 version = "0.0.1"
-keywords = ["incremental", "parsing", "SPL"]
+keywords = ["incremental", "parsing", "spl"]
 categories = ["parsing", "text-editors"]
-repository = "https://github.com/tree-sitter/tree-sitter-SPL"
+repository = "https://github.com/tree-sitter/tree-sitter-spl"
 edition = "2018"
 license = "MIT"
 

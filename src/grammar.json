@@ -1,5 +1,5 @@
 {
-  "name": "SPL",
+  "name": "spl",
   "rules": {
     "source_file": {
       "type": "REPEAT",
