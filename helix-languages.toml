@@ -1,0 +1,9 @@
+[[language]]
+name = "spl"
+scope = "text.spl"
+file-types = ["spl"]
+roots = []
+
+[[grammar]]
+name = "spl"
+source = { git = "https://github.com/tudbut/tree-sitter-spl", rev = "main" }
