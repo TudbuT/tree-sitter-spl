@@ -29,8 +29,9 @@ module.exports = grammar({
     function_definition: $ => choice($.func, $.block),
     func: $ => seq(
       'func', $._spacing,
-      $.identifier, $._spacing, choice(seq('@', $.identifier, '!{', $._spacing, repeat(choice(/./, $._spacing)), $._spacing, '}'), $.block),
+      $.identifier, $._spacing, choice(seq('@', $.identifier, '!', $.blocky), $.block),
     ),
+    blocky: $ => seq('{', repeat(choice($.blocky, /./)), '}'),
     block: $ => seq(
       '{', $._spacing, repeat(seq(/[^ \n\r\t|]+/, $._spacing)), '|', 
         repeat($._statement), 
