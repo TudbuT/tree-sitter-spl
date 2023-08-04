@@ -33,7 +33,7 @@ module.exports = grammar({
       $.block,
     ),
     block: $ => seq(
-      '{', optional($._spacing, repeat(seq(/[^ \n\r\t|]+/, $._spacing)), '|'), 
+      optional('!'), '{', optional($._spacing, repeat(seq(/[^ \n\r\t|]+/, $._spacing)), '|'), 
         repeat($._statement), 
       '}',
     ),
