@@ -1,8 +1,6 @@
 "install-helix" =program-name
 
 func main { mega | pop
-	[ "sh" "-c" "mkdir -p $HOME/.config/helix/runtime/queries/spl && cp queries/* $HOME/.config/helix/runtime/queries/spl/" ] command-wait;
-	[ "sh" "-c" "rm -rf $HOME/.config/helix/runtime/grammars/sources/spl" ] command-wait;
 
 	"Do you want to add the language to helix and reload? (Is this your first time running this script?) (yes/no)\n> " print
 	readln "yes" eq if {
@@ -12,6 +10,8 @@ func main { mega | pop
 	"What is your helix binary? (hx/helix/...)\n> " print
 	def hx readln =hx
 	hx "" eq if { "hx" =hx }
+	[ "sh" "-c" "mkdir -p $HOME/.config/helix/runtime/queries/spl && cp queries/* $HOME/.config/helix/runtime/queries/spl/" ] command-wait;
+	[ "sh" "-c" "rm -rf $HOME/.config/helix/runtime/grammars/sources/spl" ] command-wait;
 	[ hx "-g" "fetch" ] command-wait;
 	[ hx "-g" "build" ] command-wait;
 
