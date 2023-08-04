@@ -29,11 +29,11 @@ module.exports = grammar({
     function_definition: $ => choice($.func, $.block),
     func: $ => seq(
       'func', $._spacing,
-      $.identifier, $._spacing,
+      $.identifier, optional($._spacing, $.identifier), $._spacing,
       $.block,
     ),
     block: $ => seq(
-      '{', $._spacing, repeat(seq(/[^ \n\r\t|]+/, $._spacing)), '|', 
+      '{', optional($._spacing, repeat(seq(/[^ \n\r\t|]+/, $._spacing)), '|'), 
         repeat($._statement), 
       '}',
     ),
